@@ -1,20 +1,10 @@
-.location-container {
-  margin: 10px 15px 15px 20px;
-  height: auto;
-  /* border: 1px solid #fff; */
-  color: #fff;
-  padding-left: 15px;
+.main-info {
+  width: 100%; 
+  display: table;
 }
 
-.location-container .city {
-  margin: 0;
-  font-size: 2.2em;
-  color: #fff;
-  font-weight: 100;
-}
-
-.location-container .country {
-  font-size: 0.9em;
+.table-row {
+  display: table-row;
 }
 
 .user-input {
@@ -55,23 +45,17 @@
   display: none;
 }
 
+.partly-cloudy {
+  background: url('partly-cloudy.jpg') no-repeat;
+  background-size: initial;
+}
+
 @media only screen and (min-width: 768px) {
-  .location-container {
-    margin: 40px 20px 20px 40px;
-    height: 120px;
-    width: 380px;
-    color: #fff;
-    padding-left: 46px;
-  }
-  
-  .location-container .city {
-    margin: 0;
-    font-size: 3.5em;
-    color: #fff;
-    font-weight: 100;
+  .main-info {
+    margin-top: 50px;
   }
 
-  .location-container .country {
-    font-size: 1.3em;
+  .partly-cloudy {
+    background-size: cover;
   }
 }

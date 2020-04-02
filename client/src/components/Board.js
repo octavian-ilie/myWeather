@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Board.css';
 import Location from './Location';
+import Degrees from './Degrees';
 
 export class Board extends Component {
   constructor(props) {
@@ -49,10 +50,18 @@ export class Board extends Component {
       )
     }
 
+    if (this.state.data.current.weather_descriptions.toString() === 'Partly cloudy') {
+      document.body.className = "partly-cloudy";
+    } else document.body.style.backgroundColor = "black";
+
     return (
       <div className="board">
-        <Location data={this.state.data.location}/>
-        <br></br><br></br><br></br><br></br>
+        <div className="main-info">
+          <div className="table-row">
+            <Location data={this.state.data.location} />
+            <Degrees data={this.state.data.current} />
+          </div>
+        </div>
         
         <div className="user-input">
           <form onSubmit={this.handleSubmit.bind()}>
