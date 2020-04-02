@@ -13,15 +13,17 @@ app.get('/', (req, res) => {
   res.send('The local server is working just fine.');
 });
 
+app.get('/api/weather/', (req, res) => {
+  res.json({ error: 'Location required.' });
+});
+
 app.get('/api/weather/:location', (req, res) => {
   const { location } = req.params;
 
   // fetch data from the external API
   fetch(`${url}?access_key=${key}&query=${location}`)
     .then((data) => data.json())
-    .then((data) => console.log(data));
-
-  res.send(`The weather from ${location} will be shown here.`);
+    .then((data) => res.send(data));
 });
 
 app.listen(port, () => console.log(`Server started on port ${port}.`));
