@@ -1,0 +1,15 @@
+.location-container {
+  margin: 40px 20px 20px 40px;
+  height: 120px;
+  width: 380px;
+  /* border: 1px solid #fff; */
+  color: #fff;
+  padding-left: 46px;
+}
+
+.location-container .city {
+  margin: 0;
+  font-size: 3.5em;
+  color: #fff;
+  font-weight: 100;
+}

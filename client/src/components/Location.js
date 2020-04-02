@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
+import './Location.css';
 
 export class Location extends Component {
   constructor(props) {
     super(props);
     this.state = {
       city: this.props.data.name,
+      country: this.props.data.country,
     }
   }
+
   render() {
+
     return (
-        <h2>
+      <div>
+        <span className="city">
           {this.state.city}
-        </h2>
+        </span>
+        <br></br>
+          {this.state.country.toUpperCase()}
+      </div>
     )
   }
 };
