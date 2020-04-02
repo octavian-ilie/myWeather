@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './Conditions.css';
+import './FeelsLike.css';
 
-export class Conditions extends Component {
+export class FeelsLike extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      conditions: this.props.data.weather_descriptions,
+      feelsLike: this.props.data.feelslike,
     }
   }
 
@@ -13,19 +13,19 @@ export class Conditions extends Component {
     setInterval(() => {
       this.setState(() => {
         return { 
-          conditions: this.props.data.weather_descriptions
+          feelsLike: this.props.data.feelslike
         }
       });
     }, 100);
   }
-  
+
   render() {
     return (
-      <div className="conditions">
-        {this.state.conditions}
+      <div className="feelslike">
+        Feels like: {this.state.feelsLike}
       </div>
     )
   }
 };
 
-export default Conditions;
+export default FeelsLike;

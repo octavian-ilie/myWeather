@@ -3,12 +3,13 @@ import './Board.css';
 import Location from './Location';
 import Degrees from './Degrees';
 import Conditions from './Conditions';
+import FeelsLike from './FeelsLike';
 
 export class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      spinner: 'Loading...',
+      spinner: 'Loading weather info...',
       location: 'Amsterdam',
       data: null,
     };
@@ -66,13 +67,14 @@ export class Board extends Component {
           </div>
           <div className="table-row">
             <Conditions data={this.state.data.current} />
+            <FeelsLike data={this.state.data.current} />
           </div>
         </div>
         
         <div className="user-input">
           <form onSubmit={this.handleSubmit.bind()}>
             <label>
-              <input type="text" placeholder="Enter your location." className="text-field" ref={ el => this.element = el } />
+              <input type="text" placeholder="take me somewhere" className="text-field" ref={ el => this.element = el } />
             </label>
             <input type="submit" className="submit-button" value="GO" />
           </form>
