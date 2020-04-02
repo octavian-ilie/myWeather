@@ -7,7 +7,6 @@ export class Board extends Component {
     super(props);
     this.state = {
       spinner: 'Loading...',
-      reload: false,
       location: 'Amsterdam',
       data: null,
     };
@@ -16,7 +15,7 @@ export class Board extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({ location: this.element.value, reload: true });
+    this.setState({ location: this.element.value });
   }
 
   getWeather(location) {
@@ -54,12 +53,16 @@ export class Board extends Component {
       <div className="board">
         <Location data={this.state.data.location}/>
         <br></br><br></br><br></br><br></br>
-        <form onSubmit={this.handleSubmit.bind()}>
-        <label>
-          <input type="text" ref={ el => this.element = el } />
-        </label>
-        <input type="submit" value="GO" />
-      </form>
+        
+        <div className="user-input">
+          <form onSubmit={this.handleSubmit.bind()}>
+            <label>
+              <input type="text" placeholder="Enter your location." className="text-field" ref={ el => this.element = el } />
+            </label>
+            <input type="submit" className="submit-button" value="GO" />
+          </form>
+        </div>
+
       </div>
     )
   }

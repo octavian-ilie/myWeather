@@ -17,12 +17,49 @@
   font-size: 0.9em;
 }
 
+.user-input {
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  background-color: #01aba8;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.user-input .text-field {
+  border: none;
+  border-radius: 0%;
+  background-color: transparent;
+  font-size: 16pt;
+  width: 100%;
+  box-sizing: border-box;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+}
+
+.user-input .text-field:focus {
+  outline: none;
+  border-bottom: 2px solid #ffbf00;
+}
+
+.user-input .text-field::placeholder {
+  color: #fff;
+}
+.user-input .text-field:focus::placeholder {
+  color: transparent;
+}
+
+.user-input .submit-button {
+  display: none;
+}
+
 @media only screen and (min-width: 768px) {
   .location-container {
     margin: 40px 20px 20px 40px;
     height: 120px;
     width: 380px;
-    /* border: 1px solid #fff; */
     color: #fff;
     padding-left: 46px;
   }
