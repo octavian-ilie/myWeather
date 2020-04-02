@@ -1,0 +1,11 @@
+.conditions {
+  padding-left: 30px;
+  color: #fff;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+  .conditions {
+    padding-left: 46px;
+  }
+}

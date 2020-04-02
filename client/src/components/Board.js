@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Board.css';
 import Location from './Location';
 import Degrees from './Degrees';
+import Conditions from './Conditions';
 
 export class Board extends Component {
   constructor(props) {
@@ -44,14 +45,16 @@ export class Board extends Component {
 
     if (!this.state.data) {
       return (
-        <div>
-          <p> {this.state.spinner} </p>
+        <div className="loading">
+          <p>{this.state.spinner}</p>
         </div>
       )
     }
 
     if (this.state.data.current.weather_descriptions.toString() === 'Partly cloudy') {
-      document.body.className = "partly-cloudy";
+      document.body.style.backgroundColor = "#779ECB";
+    } else if (this.state.data.current.weather_descriptions.toString() === 'Clear') {
+        document.body.style.backgroundColor = "#003E7C";
     } else document.body.style.backgroundColor = "black";
 
     return (
@@ -60,6 +63,9 @@ export class Board extends Component {
           <div className="table-row">
             <Location data={this.state.data.location} />
             <Degrees data={this.state.data.current} />
+          </div>
+          <div className="table-row">
+            <Conditions data={this.state.data.current} />
           </div>
         </div>
         
