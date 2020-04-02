@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,4 +10,48 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+header {
+  height: auto;
+  width: 100%;
+  background-color: transparent;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 26px;
+}
+
+.app-title {
+  float: right;
+  font-size: 16pt;
+  font-weight: 200;
+}
+
+.app-title .my {
+  color: #fff;
+}
+
+.app-title .weather {
+  color: #01aba8;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    padding: 36px;
+  }
+
+  header img {
+    float: left;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .app-title {
+    font-size: 24pt;
+  }
 }
