@@ -10,15 +10,28 @@ export class Location extends Component {
     }
   }
 
+  componentDidMount() {
+    setInterval(() => {
+      this.setState(() => {
+        return { 
+          city: this.props.data.name, 
+          country: this.props.data.country 
+        }
+      });
+    }, 100);
+  }
+
   render() {
 
     return (
-      <div>
+      <div className="location-container">
         <span className="city">
           {this.state.city}
         </span>
         <br></br>
+        <span className="country">
           {this.state.country.toUpperCase()}
+        </span>
       </div>
     )
   }

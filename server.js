@@ -7,7 +7,7 @@ const port = 5000;
 
 // External API settings
 const url = 'http://api.weatherstack.com/current';
-const key = '9005f60415b2440ee081c2ac39be8905';
+const key = '6b7fdc45ea62ff6c7158b4720f442c52';
 
 app.get('/', (req, res) => {
   res.send('The local server is working just fine.');
