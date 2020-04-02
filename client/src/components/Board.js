@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Board.css';
+import Location from './Location';
 
 // Temporary location for development purposes
 const mockLocation = 'Amsterdam';
@@ -34,12 +35,12 @@ export class Board extends Component {
     }
 
     return (
-      <div>
-        <h2>The weather board.</h2>
+      <div className="location-container">
+        <Location data={this.state.data.location}/>
       </div>
     )
 
   }
-}
+};
 
 export default Board;
