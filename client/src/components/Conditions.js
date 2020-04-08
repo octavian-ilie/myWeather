@@ -18,11 +18,12 @@ export class Conditions extends Component {
       });
     }, 100);
   }
-  
+
   render() {
     return (
       <div className="conditions">
         {this.state.conditions}
+        <br></br><br></br>
       </div>
     )
   }

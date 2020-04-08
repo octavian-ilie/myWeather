@@ -4,6 +4,7 @@ import Location from './Location';
 import Degrees from './Degrees';
 import Conditions from './Conditions';
 import FeelsLike from './FeelsLike';
+import GeneralInfo from './GeneralInfo';
 
 export class Board extends Component {
   constructor(props) {
@@ -52,10 +53,15 @@ export class Board extends Component {
       )
     }
 
+// TO BE REFACTORED
     if (this.state.data.current.weather_descriptions.toString() === 'Partly cloudy') {
       document.body.style.backgroundColor = "#779ECB";
     } else if (this.state.data.current.weather_descriptions.toString() === 'Clear') {
         document.body.style.backgroundColor = "#003E7C";
+    } else if (this.state.data.current.weather_descriptions.toString() === 'Sunny') {
+        document.body.style.backgroundColor = "#0d0d85";
+    } else if (this.state.data.current.weather_descriptions.toString() === 'Light Rain Shower') {
+        document.body.style.backgroundColor = "#648A8D";
     } else document.body.style.backgroundColor = "black";
 
     return (
@@ -68,6 +74,7 @@ export class Board extends Component {
           <div className="table-row">
             <Conditions data={this.state.data.current} />
             <FeelsLike data={this.state.data.current} />
+            <GeneralInfo data={this.state.data.current} />
           </div>
         </div>
         
